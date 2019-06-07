@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>登录</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://cdn.90so.net/jquery/3.3.1/jquery.min.js"></script>
+    <!-- //for-mobile-apps -->
+    <script src="https://cdn.90so.net/layui/2.5.1/layui.all.js"></script>
+    <link rel="stylesheet" href="https://cdn.90so.net/layui/2.5.1/css/layui.css" media="all">
+    <link rel="stylesheet" th:href="@{/static/css/style.css}"/>
+
+    <script type="text/javascript" th:src="@{/static/js/login.js}"></script>
+
+</head>
+<body>
+<!-- main -->
+<div class="main">
+    <h1>
+        后台登录系统
+    </h1>
+    <form>
+        <input type="text" value="用户名" id="localName" placeholder="用户名">
+        <input type="password" value="密码" id="password" placeholder="用户密码">
+        <input type="submit" id="submit" value="登录">
+    </form>
+</div>
+
+<!-- //main -->
+</body>
+</html>

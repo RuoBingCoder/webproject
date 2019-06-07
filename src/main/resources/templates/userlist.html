@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>用户</title>
+    <script src="https://cdn.90so.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.90so.net/layui/2.5.1/layui.all.js"></script>
+    <link rel="stylesheet" href="https://cdn.90so.net/layui/2.5.1/css/layui.css" media="all">
+    <link rel="stylesheet" th:href="@{/static/css/index.css}"/>
+</head>
+<body>
+
+<div class="search">
+    <div class="layui-inline">
+        <input class="layui-input" name="id" id="searchname" autocomplete="off">
+    </div>
+    <button class="layui-btn" id="vaguesearch" data-type="reload">搜索</button>
+</div>
+<table class="layui-hide" id="demo" lay-filter="test"></table>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<div class="layui-tab layui-tab-brief" lay-filter="demo">
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+
+            <div class="layui-tab-item">
+                <div id="laydateDemo"></div>
+            </div>
+            <div class="layui-tab-item">
+                <div id="pageDemo"></div>
+            </div>
+            <div class="layui-tab-item">
+                <div class="layui-upload-drag" id="uploadDemo">
+                    <i class="layui-icon"></i>
+                    <p>点击上传，或将文件拖拽到此处</p>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div id="sliderDemo" style="margin: 50px 20px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <blockquote class="layui-elem-quote layui-quote-nm layui-hide" id="footer">layui {{ layui.v }} 提供强力驱动</blockquote>
+
+</div>
+<script th:src="@{/static/js/index.js}"></script>
+</body>
+</html>
