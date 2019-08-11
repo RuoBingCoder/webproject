@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/dataSources.local.xml
+.idea/workspace.xml
+
+springboot-api/src/test/
+springboot-api/target
+provider/target
+consumer/target

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.provider.dao.StudentDao">
+    <sql id="Student">
+            id,
+            stu_name,
+            stu_num,
+            age,
+            phone_num
+    </sql>
+
+    <select id="findStudentList" resultType="bean.Student">
+        select
+        <include refid="Student"/>
+        from tb_student_2
+    </select>
+    <update id="updateStudent" parameterType="bean.Student">
+        update tb_student_2
+        <set>
+            <if test="id != null">
+                id=#{id,jdbcType=INTEGER} ,
+            </if>
+            <if test="stuNum != null">
+                stu_num=#{stuNum,jdbcType=BIGINT} ,
+            </if>
+            <if test="stuName != null">
+                stu_name=#{stuName,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                age=#{age,jdbcType=INTEGER} ,
+            </if>
+            <if test="phoneNum != null">
+                phone_num=#{phoneNum,jdbcType=BIGINT}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="deleteStudentById" parameterType="integer">
+        delete
+        from tb_student_2
+        where stu_num = #{studentNum,jdbcType=INTEGER}
+    </delete>
+    <select id="selectStudentById" resultType="bean.Student">
+        select
+        <include refid="Student"/>
+        from tb_student_2 where stu_num=#{studentNum,jdbcType=INTEGER}
+    </select>
+</mapper>
